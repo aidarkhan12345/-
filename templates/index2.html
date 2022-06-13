@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block title %}
+<title>Платежная система для клиентов банка</title>
+{% endblock %}
+{% block body %}
+ <div class="pricing-header px-3 py -3 pt-md-5 pb-md-4 mx-auto txt-center">
+   <h1 class = "display-4">Актуальные платежи</h1>
+   <h2> </h2>
+   </div>
+ <div class="container">
+	 <div class= "card-desk mb-3 text-center">
+		{% for el in data %}
+		
+		<div class="card mb-4 rounded-3 shadow-sm">
+	       <div class="card-header py-3">
+		       <h4 class="my-0 fw-normal"><b>{{el.title}}</b></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ el.price}}<small class="text-muted fw-light">тенге</small></h1>
+            <ul cl{{el.title}}</li>
+              <li>данные отправляются в платежную систему</li>
+             
+            </ul>
+			<a href="/buy/{{ el.id}}" class="btn btn-lg btn-block btn-outline-primary">Оплатить</a>
+           </div>
+        </div>
+		{% endfor %}
+		
+      </div> 
+
+ {% endblock %}
+ </div>
